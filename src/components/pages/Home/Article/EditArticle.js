@@ -11,13 +11,13 @@ export default function EditArticle() {
    const [load, setLoad] = useState(false);
 
    useEffect(() => {
-      fetch(`http://localhost:5000/article/${id}`)
+      fetch(`https://travel-agency-server01.herokuapp.com/article/${id}`)
          .then(res => res.json())
          .then(data => setArticle(data))
    }, [])
 
    const onSubmit = data => {
-      fetch(`http://localhost:5000/updatearticle/${id}`, {
+      fetch(`https://travel-agency-server01.herokuapp.com/updatearticle/${id}`, {
          method: 'PUT',
          headers: {
             'content-type': 'application/json'

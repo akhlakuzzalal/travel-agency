@@ -7,7 +7,7 @@ const SingleBlog = ({ blog, setLoad, load }) => {
    const { img, _id, message, placeName } = blog;
    const approveBlog = (stutus, id) => {
       setLoad(true)
-      fetch(`http://localhost:5000/blogs/${id}`, {
+      fetch(`https://travel-agency-server01.herokuapp.com/blogs/${id}`, {
          method: 'PUT',
          headers: {
             'content-type': 'application/json'
@@ -22,7 +22,7 @@ const SingleBlog = ({ blog, setLoad, load }) => {
 
    const deleteBlog = (id) => {
       setLoad(true)
-      fetch(`http://localhost:5000/deleteblog/${id}`, {
+      fetch(`https://travel-agency-server01.herokuapp.com/deleteblog/${id}`, {
          method: 'DELETE'
       })
          .then(res => res.json())

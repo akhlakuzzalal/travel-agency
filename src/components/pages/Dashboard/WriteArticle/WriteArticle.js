@@ -6,7 +6,7 @@ export default function App() {
    const { register, handleSubmit, reset } = useForm();
    const [load, setLoad] = useState(false);
    const onSubmit = data => {
-      fetch(`http://localhost:5000/articlepost`, {
+      fetch(`https://travel-agency-server01.herokuapp.com/articlepost`, {
          method: 'POST',
          headers: {
             'content-type': 'application/json'

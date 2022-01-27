@@ -22,7 +22,7 @@ export default function App() {
    }, [url]);
 
    const onSubmit = data => {
-      fetch(`http://localhost:5000/blogpost`, {
+      fetch(`https://travel-agency-server01.herokuapp.com/blogpost`, {
          method: 'POST',
          headers: {
             'content-type': 'application/json'

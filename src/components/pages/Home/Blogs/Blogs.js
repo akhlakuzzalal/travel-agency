@@ -9,7 +9,7 @@ const Blogs = () => {
    const [pageCount, setPageCount] = useState(1);
    const [blogs, setBlogs] = useState([]);
    useEffect(() => {
-      fetch(`http://localhost:5000/data?page=${page}&&size=${size}`)
+      fetch(`https://travel-agency-server01.herokuapp.com/data?page=${page}&&size=${size}`)
          .then(res => res.json())
          .then(data => {
             const pageNumber = Math.ceil(data.count / size);

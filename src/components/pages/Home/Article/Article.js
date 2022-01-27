@@ -21,7 +21,7 @@ const Article = ({ article, load, setLoad }) => {
 
    const deleteArticle = (id) => {
       setLoad(true)
-      fetch(`http://localhost:5000/deletearticle/${id}`, {
+      fetch(`https://travel-agency-server01.herokuapp.com/deletearticle/${id}`, {
          method: 'DELETE'
       })
          .then(res => res.json())

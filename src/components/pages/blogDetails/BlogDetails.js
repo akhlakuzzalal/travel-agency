@@ -9,7 +9,7 @@ const BlogDetails = () => {
    const [blog, setBlog] = useState({})
    const { name, date, time, expence, img, message, placeName, rating } = blog
    useEffect(() => {
-      fetch(`http://localhost:5000/details/${id}`)
+      fetch(`https://travel-agency-server01.herokuapp.com/details/${id}`)
          .then(res => res.json())
          .then(data => setBlog(data[0]))
    }, [id]);
