@@ -1,0 +1,10 @@
+.footer {
+   display: block;
+   box-sizing: border-box;
+   padding: 35px 0 0px 0;
+   background-color: #151510;
+   clip-path: ellipse(108% 100% at 20.82% 100%);
+}
+.footer .container{
+   padding: 40px 0 20px 0;
+}
