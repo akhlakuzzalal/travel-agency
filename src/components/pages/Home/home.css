@@ -1,10 +1,10 @@
-.css-jz7rmq-MuiPaper-root-MuiAppBar-root{
+.appbar .css-jz7rmq-MuiPaper-root-MuiAppBar-root{
    background-color: #1976d23b !important;
 }
-.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
+.appbar .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
    background-color: #8a98a76e !important;
 }
-.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper p{
+.appbar .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper p{
    font-weight: 700;
 }
 .css-1t6c9ts {

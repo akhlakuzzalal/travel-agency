@@ -50,115 +50,117 @@ const ResponsiveAppBar = () => {
 
 
    return (
-      <AppBar position="absolute">
-         <Container maxWidth="xl">
-            <Toolbar disableGutters>
-               <Typography
-                  variant="h6"
-                  noWrap
-                  component="div"
-                  sx={{ mr: 2, display: { xs: 'none', md: 'flex', cursor: 'pointer' } }}
-               >
-                  <Link to='/'><img height={'80px'} width={'100px'} src={LogoImg} alt="" /></Link>
-               </Typography>
-
-               <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                  <IconButton
-                     size="large"
-                     aria-label="account of current user"
-                     aria-controls="menu-appbar"
-                     aria-haspopup="true"
-                     onClick={handleOpenNavMenu}
-                     color="inherit"
+      <div className='appbar'>
+         <AppBar position="absolute">
+            <Container maxWidth="xl">
+               <Toolbar disableGutters>
+                  <Typography
+                     variant="h6"
+                     noWrap
+                     component="div"
+                     sx={{ mr: 2, display: { xs: 'none', md: 'flex', cursor: 'pointer' } }}
                   >
-                     <MenuIcon />
-                  </IconButton>
-                  <Menu
-                     id="menu-appbar"
-                     anchorEl={anchorElNav}
-                     anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'left',
-                     }}
-                     keepMounted
-                     transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'left',
-                     }}
-                     open={Boolean(anchorElNav)}
-                     onClose={handleCloseNavMenu}
-                     sx={{
-                        display: { xs: 'block', md: 'none' },
-                     }}
-                  >
-                     {
-                        profile?.role === 'admin' && <MenuItem onClick={handleCloseNavMenu}>
-                           <Typography textAlign="center">
-                              <Link className='text-decoration-none text-light' to='dashboard'>Dashboard</Link>
-                           </Typography>
-                        </MenuItem>
-                     }
-                  </Menu>
-               </Box>
-               <Typography
-                  variant="h6"
-                  noWrap
-                  component="div"
-                  sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-               >
-                  <Link to='/'><img height={'80px'} width={'100px'} src={LogoImg} alt="" /></Link>
-               </Typography>
-               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                     <Link to='/'><img height={'80px'} width={'100px'} src={LogoImg} alt="" /></Link>
+                  </Typography>
 
-                  {
-                     !user.email && <Button
-                        sx={{ my: 2, color: 'white', display: 'block' }}
+                  <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                     <IconButton
+                        size="large"
+                        aria-label="account of current user"
+                        aria-controls="menu-appbar"
+                        aria-haspopup="true"
+                        onClick={handleOpenNavMenu}
+                        color="inherit"
                      >
-                        <Link className='text-decoration-none text-light' to='login'>LogIn</Link>
-                     </Button>
-                  }
-                  {
-                     profile?.role === 'admin' && <Button
-                        sx={{ my: 2, color: 'white', display: 'block' }}
-                     >
-                        <Link className='text-decoration-none text-light' to='dashboard'>Dashboard</Link>
-                     </Button>
-                  }
-               </Box>
-
-               <Box sx={{ flexGrow: 0, backgroundColor: "rgba(240, 255, 253, 0)" }}>
-                  <Tooltip title="Open settings">
-                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                        {
-                           user?.email && <Avatar alt="Remy Sharp" src={profile?.img} />
-                        }
+                        <MenuIcon />
                      </IconButton>
-                  </Tooltip>
-                  <Menu
-                     sx={{ mt: '45px' }}
-                     id="menu-appbar"
-                     anchorEl={anchorElUser}
-                     anchorOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                     }}
-                     keepMounted
-                     transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                     }}
-                     open={Boolean(anchorElUser)}
-                     onClose={handleCloseUserMenu}
+                     <Menu
+                        id="menu-appbar"
+                        anchorEl={anchorElNav}
+                        anchorOrigin={{
+                           vertical: 'bottom',
+                           horizontal: 'left',
+                        }}
+                        keepMounted
+                        transformOrigin={{
+                           vertical: 'top',
+                           horizontal: 'left',
+                        }}
+                        open={Boolean(anchorElNav)}
+                        onClose={handleCloseNavMenu}
+                        sx={{
+                           display: { xs: 'block', md: 'none' },
+                        }}
+                     >
+                        {
+                           profile?.role === 'admin' && <MenuItem onClick={handleCloseNavMenu}>
+                              <Typography textAlign="center">
+                                 <Link className='text-decoration-none text-light' to='dashboard'>Dashboard</Link>
+                              </Typography>
+                           </MenuItem>
+                        }
+                     </Menu>
+                  </Box>
+                  <Typography
+                     variant="h6"
+                     noWrap
+                     component="div"
+                     sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                   >
+                     <Link to='/'><img height={'80px'} width={'100px'} src={LogoImg} alt="" /></Link>
+                  </Typography>
+                  <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 
-                     <MenuItem onClick={handleCloseUserMenu}>
-                        <Typography onClick={logOut} textAlign="center">LogOut</Typography>
-                     </MenuItem>
-                  </Menu>
-               </Box>
-            </Toolbar>
-         </Container>
-      </AppBar>
+                     {
+                        !user.email && <Button
+                           sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                           <Link className='text-decoration-none text-light' to='login'>LogIn</Link>
+                        </Button>
+                     }
+                     {
+                        profile?.role === 'admin' && <Button
+                           sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                           <Link className='text-decoration-none text-light' to='dashboard'>Dashboard</Link>
+                        </Button>
+                     }
+                  </Box>
+
+                  <Box sx={{ flexGrow: 0, backgroundColor: "rgba(240, 255, 253, 0)" }}>
+                     <Tooltip title="Open settings">
+                        <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                           {
+                              user?.email && <Avatar alt="Remy Sharp" src={profile?.img} />
+                           }
+                        </IconButton>
+                     </Tooltip>
+                     <Menu
+                        sx={{ mt: '45px' }}
+                        id="menu-appbar"
+                        anchorEl={anchorElUser}
+                        anchorOrigin={{
+                           vertical: 'top',
+                           horizontal: 'right',
+                        }}
+                        keepMounted
+                        transformOrigin={{
+                           vertical: 'top',
+                           horizontal: 'right',
+                        }}
+                        open={Boolean(anchorElUser)}
+                        onClose={handleCloseUserMenu}
+                     >
+
+                        <MenuItem onClick={handleCloseUserMenu}>
+                           <Typography onClick={logOut} textAlign="center">LogOut</Typography>
+                        </MenuItem>
+                     </Menu>
+                  </Box>
+               </Toolbar>
+            </Container>
+         </AppBar>
+      </div>
    );
 };
 export default ResponsiveAppBar;
