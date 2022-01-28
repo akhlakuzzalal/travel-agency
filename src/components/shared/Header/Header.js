@@ -15,7 +15,6 @@ import LogoImg from '../../../img/logo.png'
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hook/useAuth';
 
-const pages = ['Products', 'Pricing', 'Blog'];
 
 const ResponsiveAppBar = () => {
    const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -51,7 +50,7 @@ const ResponsiveAppBar = () => {
 
    return (
       <div className='appbar'>
-         <AppBar position="absolute">
+         <AppBar className='appbar1' position="absolute">
             <Container maxWidth="xl">
                <Toolbar disableGutters>
                   <Typography
